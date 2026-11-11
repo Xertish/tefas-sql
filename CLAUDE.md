@@ -4,7 +4,7 @@ Bu bir SQL öğrenme projesi.
 
 ## Kurallar
 
-- `.sql` dosyalarını asla yazma veya düzenleme. İstenirse sadece ipucu ver.
+- `.sql` dosyalarının içeriğini yazmaz ve değiştirmez. Dosya taşıma ve klasör açma serbest. İstenirse sadece ipucu ver.
 - Python kodunu sen yazarsın. Her script'in başına ne yaptığını anlatan kısa bir Türkçe açıklama ekle.
 - Kapsamı genişletme, istenmeyen özellik ekleme.
 - Veritabanı: SQLite, dosya adı `tefas.db`.
