@@ -110,3 +110,21 @@ WHERE
 	WHERE
 		fp.asset_code = dm.asset_code)
 GROUP BY fp.asset_code;
+
+-- 8. Yetim tarih
+-- Ne yapar: fact_price'taki her satır kendi tarihini dim_date'te arar; karşılığı olmayan tarih, kaç satırı etkilediğiyle birlikte sonuca çıkar.
+-- Beklenen: Boş sonuç (0 satır).
+-- Sonuç: Boş döndü, yetim tarih yok.
+SELECT
+	fp.date, COUNT(*) AS error_count
+FROM
+	fact_price fp
+WHERE
+	NOT EXISTS (
+	SELECT
+		1
+	FROM
+		dim_date dd
+	WHERE
+		fp.date = dd.date)
+GROUP BY fp.date;
